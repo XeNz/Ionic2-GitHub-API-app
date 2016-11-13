@@ -1,0 +1,1 @@
+ionic plugin add https://github.com/phonegap-googlemaps-plugin/cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="AIzaSyDsbjPBQxB9-Vdkc314E6zshlXnp-UoJAo" --variable API_KEY_FOR_IOS="AIzaSyDsbjPBQxB9-Vdkc314E6zshlXnp-UoJAo"

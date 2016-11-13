@@ -4,7 +4,9 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar } from 'ionic-native';
 
+import { HomePage } from '../pages/home/home';
 import { UsersPage } from '../pages/users/users';
+import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 
 
 @Component({
@@ -13,8 +15,8 @@ import { UsersPage } from '../pages/users/users';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
-  rootPage: any = UsersPage;
+  // set rootpage
+  rootPage: any = HomePage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -25,22 +27,21 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
+      { title: 'Home', component: HomePage },
       { title: 'Users', component: UsersPage },
+      { title: 'GoogleMaps', component: GoogleMapsPage },
     ];
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
     });
   }
 
   openPage(page) {
-    // close the menu when clicking a link from the menu
     this.menu.close();
-    // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+    this.nav.push(page.component);
+    //this.nav.setRoot(page.component);
   }
 }
